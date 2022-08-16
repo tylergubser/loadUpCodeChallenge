@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.label "first_name" %>
+    <%= form.text_field :first_name, :value => current_user.first_name%>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.label "last_name" %>
+    <%= form.text_field :last_name, :value => current_user.last_name%>
   </div>
 
   <div class="field">
@@ -34,6 +34,11 @@
   <div class="field">
     <%= form.label :requested_hours %>
     <%= form.number_field :requested_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
   </div>
 
   <div class="field">

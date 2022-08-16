@@ -31,8 +31,13 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @booking.email %>
+  <strong>Phone:</strong>
+  <%= @booking.phone %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= price_engine(@booking.animal_type, @booking.requested_hours)%>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+  <% if current_user %>
+  <h1>LoadUp</h1>
+  <tr>
+  <td><% @user = User.find(session[:user_id]) %></td>
+  <td><%= "Logged in as #{@user.first_name} "%></td>
+  <td><%= link_to 'Logout', logout_path  %></td> | <td><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></td>
+  </tr>
+<% end %>
+  <%= yield %>
   </body>
 </html>

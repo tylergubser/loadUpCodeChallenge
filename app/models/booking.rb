@@ -5,4 +5,5 @@ class Booking < ApplicationRecord
     validates :animal_name, presence: true
     validates :animal_type, inclusion: { in: ["dog", "cat", "Dog", "Cat"] }, :allow_nil => false
     validates :requested_hours, presence: true, :inclusion =>  2..8
+    validates_length_of :phone, is: 10,  message: "Number must be 10 digit long" 
 end

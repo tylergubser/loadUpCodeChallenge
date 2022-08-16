@@ -19,9 +19,8 @@ ActiveRecord::Schema.define(version: 2022_08_16_161248) do
     t.string "animal_name"
     t.string "animal_type"
     t.integer "requested_hours"
-    t.integer "phone"
-    t.date "service_date"
     t.string "email"
+    t.date "service_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

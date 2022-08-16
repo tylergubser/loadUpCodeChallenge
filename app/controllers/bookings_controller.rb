@@ -3,12 +3,19 @@ class BookingsController < ApplicationController
 
   # GET /bookings or /bookings.json
   def index
+   
+    if current_user.admin == true
     @bookings = Booking.all
+    
+    else
+    @bookings = Booking.where(user_id: current_user.id)
+    end
+
   end
 
   # GET /bookings/1 or /bookings/1.json
   def show
-    @booking = Booking.find(params[:id])
+    @booking = Booking.find_by(user_id: current_user.id)
   end
 
   # GET /bookings/new
@@ -70,6 +77,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:user_id, :first_name, :last_name, :animal_name, :animal_type, :requested_hours, :phone, :service_date)
+      params.require(:booking).permit(:user_id, :first_name, :last_name, :animal_name, :animal_type, :requested_hours, :email, :service_date)
     end
 end

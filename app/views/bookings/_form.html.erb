@@ -37,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.label :email %>
+    <%= form.text_field :email, :value => current_user.email_address %>
   </div>
 
   <div class="field">

@@ -8,8 +8,14 @@ class SessionsController < ApplicationController
     end
 
     def create
+       
         @user = User.find_by(email_address: params[:email])
-        if @user && @user.authenticate(params[:password])
+        
+        if @user && @user.authenticate(params[:password]) && @user.admin == true
+            session[:user_id] = @user.id
+            redirect_to bookings_path
+        elsif
+            @user && @user.authenticate(params[:password]) && @user.admin == false
             session[:user_id] = @user.id
             redirect_to bookings_path
         else

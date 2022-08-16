@@ -7,6 +7,7 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.string :animal_type
       t.integer :requested_hours
       t.date :service_date
+      t.string :email 
 
       t.timestamps
     end

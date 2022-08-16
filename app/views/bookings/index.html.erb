@@ -10,6 +10,7 @@
       <th>Animal name</th>
       <th>Animal type</th>
       <th>Requested hours</th>
+      <th>Email</th>
       <th>Service date</th>
       <th colspan="3"></th>
     </tr>
@@ -23,6 +24,7 @@
         <td><%= booking.animal_name %></td>
         <td><%= booking.animal_type %></td>
         <td><%= booking.requested_hours %></td>
+        <td><%= booking.email %></td>
         <td><%= booking.service_date %></td>
         <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>

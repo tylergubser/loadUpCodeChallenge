@@ -14,7 +14,7 @@ How to run the test suite
 -Run " rails s " to launch rails server.
 
 You can log into the admin account with details below.
-Email: admin@gmail.com
-password: password 
+-Email: admin@gmail.com
+-password: password 
 
 click sign up to create a new (non admin) user. 

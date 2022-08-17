@@ -19,6 +19,7 @@ class BookingsTest < ApplicationSystemTestCase
     fill_in "First name", with: @booking.first_name
     fill_in "Last name", with: @booking.last_name
     fill_in "Requested hours", with: @booking.requested_hours
+    fill_in "Email", with: @booking.email
     fill_in "Service date", with: @booking.service_date
     click_on "Create Booking"
 
@@ -35,6 +36,7 @@ class BookingsTest < ApplicationSystemTestCase
     fill_in "First name", with: @booking.first_name
     fill_in "Last name", with: @booking.last_name
     fill_in "Requested hours", with: @booking.requested_hours
+    fill_in "Email", with: @booking.email
     fill_in "Service date", with: @booking.service_date
     click_on "Update Booking"
 

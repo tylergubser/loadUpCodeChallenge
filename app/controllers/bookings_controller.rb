@@ -3,11 +3,15 @@ class BookingsController < ApplicationController
 
   # GET /bookings or /bookings.json
   def index
-   
-    if current_user.admin == true
-    @bookings = Booking.all
     
+    if current_user == nil
+      redirect_to "/"
+    elsif
+      current_user.admin == true
+      @bookings = Booking.all
     else
+    
+    current_user != nil 
     @bookings = Booking.where(user_id: current_user.id)
     end
 
@@ -15,7 +19,9 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1 or /bookings/1.json
   def show
+    
     @booking = Booking.find_by(user_id: current_user.id)
+    
   end
 
   # GET /bookings/new
@@ -72,7 +78,11 @@ class BookingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
+      if current_user == nil
+        redirect_to "/"
+      else
       @booking = Booking.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.

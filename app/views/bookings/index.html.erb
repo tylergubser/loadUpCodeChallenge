@@ -2,7 +2,7 @@
 
 <h1>Bookings</h1>
 
-<table>
+<table class="styled-table">
   <thead>
     <tr>
       <th>First name</th>
@@ -26,11 +26,10 @@
         <td><%= booking.animal_type %></td>
         <td><%= booking.requested_hours %></td>
         <td><%= booking.email %></td>
-        <td><%= booking.service_date %></td>
+        <td><%= booking.service_date.strftime('%m-%d-%Y') %></td>
         <td><%= price_engine(booking.animal_type, booking.requested_hours) %></td>
-        <td><%= link_to 'Show', booking %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   

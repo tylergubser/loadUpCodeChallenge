@@ -15,37 +15,30 @@
     <%= form.label "first_name" %>
     <%= form.text_field :first_name, :value => current_user.first_name%>
   </div>
-
   <div class="field">
     <%= form.label "last_name" %>
     <%= form.text_field :last_name, :value => current_user.last_name%>
   </div>
-
   <div class="field">
     <%= form.label :animal_name %>
     <%= form.text_field :animal_name %>
   </div>
-
   <div class="field">
     <%= form.label :animal_type %>
     <%= form.text_field :animal_type %>
   </div>
-
   <div class="field">
     <%= form.label :requested_hours %>
     <%= form.number_field :requested_hours %>
   </div>
-
   <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email, :value => current_user.email_address %>
   </div>
-
   <div class="field">
     <%= form.label :service_date %>
     <%= form.date_select :service_date %>
   </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>

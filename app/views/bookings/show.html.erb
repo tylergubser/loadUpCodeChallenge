@@ -27,7 +27,7 @@
 
 <p>
   <strong>Service date:</strong>
-  <%= @booking.service_date %>
+  <%= @booking.service_date.strftime('%m-%d-%Y') %>
 </p>
 
 <p>
@@ -37,6 +37,7 @@
 
 <p>
   <strong>Price:</strong>
+  
   <%= price_engine(@booking.animal_type, @booking.requested_hours)%>
 </p>
 

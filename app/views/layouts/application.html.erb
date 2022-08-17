@@ -11,8 +11,9 @@
   </head>
 
   <body>
+  
+  <h1>LoadUp Cat and Dog sitting</h1>
   <% if current_user %>
-  <h1>LoadUp</h1>
   <tr>
   <td><% @user = User.find(session[:user_id]) %></td>
   <td><%= "Logged in as #{@user.first_name} "%></td>
